@@ -2,16 +2,32 @@
 
 网址： https://dos.lol
 
-
 中文 DOS 游戏合集，目前共有 1898 款游戏。
 
 ## 下载游戏文件
+
+如果不希望下载全部的游戏（总共30+GB），可以定制文件 game.list
+```
+$ cat game.list
+
+大富翁2
+仙剑奇侠传
+```
 
 在根目录下运行 Python 3 脚本
 
 ``` python
 python download_data.py
 ```
+
+# 在容器内运行
+
+```
+./start.sh
+```
+
+运行后， 访问 http://localhost:262 就可以玩游戏了。 
+如果定制了game.list，那么就只能玩game.list 里的游戏。 
 
 若下载出错请参见 [Issue #26](https://github.com/rwv/chinese-dos-games/issues/26)
 
