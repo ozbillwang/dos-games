@@ -6,8 +6,12 @@
 
 ## 下载游戏文件
 
-如果不希望下载全部的游戏（总共30+GB），可以定制文件 game.list, 每行一个游戏名称即可
+如果不希望下载全部的游戏（总共30+GB，需要从网站https://dos.lol 那里下载，时间会很长，而且有时几乎花上一天，都无法完全下载完的），可以定制文件 game.list, 每行一个游戏名称即可，这样你可以即可开始玩这几个游戏了。
 ```
+# 查看所有的游戏列表：
+$ cat all_game.list
+
+# 自己建个想玩的游戏列表， 从 "all_game.list" 复制即可
 $ cat game.list
 
 大富翁2
@@ -22,17 +26,23 @@ $ cat game.list
 python download_data.py
 ```
 
-如果希望下载所有的游戏，那么删除文件 `game.list` 后，在运行上面的下载命令 
+如果希望下载所有的游戏，那么删除文件 `game.list` 后，再运行上面的下载命令， 记住，这个要花很长的时间，需要有耐心。
 
 # 在容器内运行
 
 ```
+# 先将游戏 zip 文件，存入一个docker volume 里， 以后可以再利用。 
+./volume.sh
+
+# 启动容器
 ./start.sh
 ```
 
-运行后， 访问 http://localhost:262 就可以玩游戏了。 
-如果定制了game.list，那么就只能玩game.list 里的游戏。 
+运行后， 访问 http://localhost:8080 就可以玩游戏了。 如果端口8080 已经被占用，那就在 [start.sh](start.sh] 里调整一下，再运行即可。 
 
+如果定制了game.list，那么就只能玩game.list 里的游戏。 也就是说，你还是能看到所有游戏的图片，但是只能玩你在 `game.list`里的游戏。 
+
+![image](https://github.com/ozbillwang/dos-games/assets/8954908/a09a6318-0e2e-4e25-a040-223af27b8b44)
 
 若下载出错请参见 [Issue #26](https://github.com/rwv/chinese-dos-games/issues/26)
 
