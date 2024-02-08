@@ -1,8 +1,18 @@
 # 🎮 中文 DOS 游戏
 
-网址： https://dos.lol
+## 定制
+* 单独建个[game.list](game.list), 免的游戏下载时间过长
+* 支持在容器里运行游戏。
+* 支持docker volume
 
-中文 DOS 游戏合集，目前共有 1898 款游戏。
+## todo list
+
+暂时还不清楚，如果能保持游戏进程。 一下是如何搭载环境
+
+## 前提条件
+
+* 容器的运行， 因为有几个启动脚本，故暂时只支持在linux 环境下运行。
+* [安装了docker 服务](https://docs.docker.com/engine/install/)
 
 ## 下载游戏文件
 
@@ -28,7 +38,7 @@ python download_data.py
 
 如果希望下载所有的游戏，那么删除文件 `game.list` 后，再运行上面的下载命令， 记住，这个要花很长的时间，需要有耐心。
 
-# 在容器内运行
+## 在容器内运行
 
 ```
 # 先将游戏 zip 文件，存入一个docker volume 里， 以后可以再利用。 
@@ -44,6 +54,26 @@ python download_data.py
 
 ![image](https://github.com/ozbillwang/dos-games/assets/8954908/a09a6318-0e2e-4e25-a040-223af27b8b44)
 
+若下载出错请参见 [Issue #26](https://github.com/rwv/chinese-dos-games/issues/26)
+
+======
+
+以下是原repo 的 README
+
+# 🎮 中文 DOS 游戏
+
+网址： https://dos.lol
+
+
+中文 DOS 游戏合集，目前共有 1898 款游戏。
+
+## 下载游戏文件
+
+在根目录下运行 Python 3 脚本
+
+``` python
+python download_data.py
+```
 若下载出错请参见 [Issue #26](https://github.com/rwv/chinese-dos-games/issues/26)
 
 ## 游戏列表
